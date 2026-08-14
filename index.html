@@ -1,2229 +1,1743 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-          content="Imran Ashraf Online Quran Academy - Learn Quran online with Tajweed and Islamic Education.">
-
-    <title>Imran Ashraf | Online Quran Academy</title>
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
-          rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-    <style>
-
-        /* =====================================================
-           VARIABLES
-        ===================================================== */
-
-        :root {
-            --primary: #004d3a;
-            --primary-dark: #00382a;
-            --primary-light: #08644c;
-
-            --gold: #d3a52c;
-            --gold-light: #e6c35d;
-
-            --white: #ffffff;
-            --black: #111111;
-
-            --text: #35443e;
-            --muted: #6f7773;
-
-            --light: #f7f8f4;
-            --border: #e6e9e5;
-
-            --shadow-sm: 0 5px 20px rgba(0, 0, 0, 0.06);
-            --shadow-md: 0 12px 35px rgba(0, 0, 0, 0.10);
-
-            --radius: 12px;
-            --container: 1180px;
-        }
-
-
-        /* =====================================================
-           RESET
-        ===================================================== */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: "DM Sans", sans-serif;
-            color: var(--text);
-            background: #fff;
-            line-height: 1.6;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        button {
-            font-family: inherit;
-        }
-
-        .container {
-            width: min(92%, var(--container));
-            margin: auto;
-        }
-
-
-        /* =====================================================
-           TOP BAR
-        ===================================================== */
-
-        .topbar {
-            background: var(--primary-dark);
-            color: #fff;
-            font-size: 12px;
-        }
-
-        .topbar-inner {
-            min-height: 38px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-        }
-
-        .top-info {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
-
-        .top-info a {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            transition: .25s;
-        }
-
-        .top-info a:hover {
-            color: var(--gold-light);
-        }
-
-        .top-social {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .top-social span {
-            font-size: 11px;
-            margin-right: 4px;
-        }
-
-        .top-social a {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: #fff;
-            color: var(--primary);
-            display: grid;
-            place-items: center;
-            font-size: 9px;
-            transition: .25s;
-        }
-
-        .top-social a:hover {
-            background: var(--gold);
-            color: #fff;
-            transform: translateY(-2px);
-        }
-
-
-        /* =====================================================
-           NAVBAR
-        ===================================================== */
-
-        .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(255,255,255,.97);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .nav-inner {
-            min-height: 86px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        /* YOUR LOGO IMAGE */
-
-        .logo-image {
-            width: 62px;
-            height: 62px;
-            object-fit: contain;
-            object-position: center;
-        }
-
-        .logo-content h1 {
-            font-family: "Playfair Display", serif;
-            font-size: 22px;
-            line-height: 1.1;
-            color: var(--primary);
-            letter-spacing: .3px;
-        }
-
-        .logo-content p {
-            color: var(--gold);
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: .7px;
-            margin-top: 4px;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 28px;
-        }
-
-        .nav-links a {
-            position: relative;
-            padding: 32px 0;
-            color: #26362f;
-            font-size: 13px;
-            font-weight: 600;
-            transition: .25s;
-        }
-
-        .nav-links a::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 100%;
-            bottom: 23px;
-            height: 2px;
-            background: var(--gold);
-            transition: .25s;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--primary);
-        }
-
-        .nav-links a:hover::after,
-        .nav-links a.active::after {
-            right: 0;
-        }
-
-        .menu-btn {
-            display: none;
-            border: 0;
-            background: transparent;
-            color: var(--primary);
-            font-size: 25px;
-            cursor: pointer;
-        }
-
-
-        /* =====================================================
-           HERO
-        ===================================================== */
-
-        .hero {
-            position: relative;
-            min-height: 525px;
-            overflow: hidden;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    rgba(0,61,45,.98) 0%,
-                    rgba(0,77,58,.94) 42%,
-                    rgba(0,77,58,.58) 65%,
-                    rgba(0,0,0,.18) 100%
-                ),
-
-                url("https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=1800&q=90")
-                center/cover no-repeat;
-        }
-
-        .hero::after {
-            content: "";
-            position: absolute;
-            left: -2%;
-            right: -2%;
-            bottom: -48px;
-            height: 80px;
-            background: #fff;
-            border-radius: 50% 50% 0 0;
-        }
-
-        .hero-inner {
-            position: relative;
-            z-index: 2;
-            min-height: 525px;
-            display: flex;
-            align-items: center;
-        }
-
-        .hero-content {
-            max-width: 610px;
-            color: #fff;
-            padding: 50px 0 80px;
-        }
-
-        .hero-welcome {
-            color: var(--gold-light);
-            font-family: "Playfair Display", serif;
-            font-style: italic;
-            font-size: 28px;
-            margin-bottom: 5px;
-        }
-
-        .hero h2 {
-            font-family: "Playfair Display", serif;
-            font-size: clamp(40px, 5vw, 62px);
-            line-height: 1.02;
-            letter-spacing: 1px;
-        }
-
-        .hero-title {
-            font-family: "Playfair Display", serif;
-            color: var(--gold-light);
-            font-size: clamp(25px, 3vw, 34px);
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        .hero-line {
-            width: 410px;
-            max-width: 100%;
-            height: 1px;
-            background: rgba(255,255,255,.5);
-            margin: 20px 0;
-            position: relative;
-        }
-
-        .hero-line::before {
-            content: "";
-            width: 10px;
-            height: 10px;
-            background: var(--gold);
-            border-radius: 50%;
-            position: absolute;
-            left: 50%;
-            top: -5px;
-            transform: translateX(-50%);
-        }
-
-        .hero-subtitle {
-            font-size: 22px;
-            font-weight: 700;
-            line-height: 1.4;
-            margin-bottom: 13px;
-        }
-
-        .hero-description {
-            max-width: 500px;
-            color: rgba(255,255,255,.88);
-            font-size: 14px;
-            margin-bottom: 26px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .btn {
-            min-height: 48px;
-            padding: 0 20px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 9px;
-            border-radius: 7px;
-            border: 1px solid rgba(255,255,255,.8);
-            color: #fff;
-            font-size: 12px;
-            font-weight: 700;
-            transition: .3s;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,.18);
-        }
-
-        .btn-gold {
-            background: var(--gold);
-            border-color: var(--gold);
-        }
-
-        .btn-gold:hover {
-            background: #bd9021;
-        }
-
-
-        /* =====================================================
-           SECTIONS
-        ===================================================== */
-
-        .section {
-            padding: 70px 0;
-        }
-
-        .section-heading {
-            text-align: center;
-            margin-bottom: 38px;
-        }
-
-        .section-heading .eyebrow {
-            color: var(--gold);
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 7px;
-        }
-
-        .section-heading h2 {
-            color: var(--primary);
-            font-family: "Playfair Display", serif;
-            font-size: clamp(28px, 4vw, 38px);
-            line-height: 1.2;
-        }
-
-        .section-heading p {
-            max-width: 620px;
-            margin: 12px auto 0;
-            color: var(--muted);
-            font-size: 14px;
-        }
-
-        .heading-line {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 10px;
-        }
-
-        .heading-line span {
-            width: 70px;
-            height: 1px;
-            background: var(--gold);
-        }
-
-        .heading-line i {
-            color: var(--gold);
-            font-size: 12px;
-        }
-
-
-        /* =====================================================
-           COURSES
-        ===================================================== */
-
-        .courses {
-            background: #fff;
-        }
-
-        .course-grid {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 16px;
-        }
-
-        .course-card {
-            padding: 24px 16px 21px;
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            text-align: center;
-            background: #fff;
-            box-shadow: var(--shadow-sm);
-            transition: .3s ease;
-        }
-
-        .course-card:hover {
-            transform: translateY(-7px);
-            border-color: rgba(211,165,44,.5);
-            box-shadow: var(--shadow-md);
-        }
-
-        .course-icon {
-            width: 66px;
-            height: 66px;
-            margin: 0 auto 16px;
-            border-radius: 50%;
-            background: #edf5f0;
-            display: grid;
-            place-items: center;
-            color: var(--primary);
-            font-size: 27px;
-            transition: .3s;
-        }
-
-        .course-card:hover .course-icon {
-            background: var(--primary);
-            color: #fff;
-        }
-
-        .course-card h3 {
-            color: var(--primary);
-            font-size: 15px;
-            line-height: 1.35;
-            min-height: 42px;
-            margin-bottom: 9px;
-        }
-
-        .course-card p {
-            color: var(--muted);
-            font-size: 11px;
-            line-height: 1.65;
-        }
-
-
-        /* =====================================================
-           WHY CHOOSE US
-        ===================================================== */
-
-        .why {
-            background: var(--light);
-            border-top: 1px solid #eef0eb;
-            border-bottom: 1px solid #eef0eb;
-        }
-
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            background: #fff;
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .why-card {
-            padding: 27px 10px;
-            text-align: center;
-            border-right: 1px solid var(--border);
-            transition: .3s;
-        }
-
-        .why-card:last-child {
-            border-right: 0;
-        }
-
-        .why-card:hover {
-            background: #fbfcfa;
-        }
-
-        .why-icon {
-            width: 52px;
-            height: 52px;
-            margin: 0 auto 13px;
-            border-radius: 50%;
-            background: #edf5f0;
-            display: grid;
-            place-items: center;
-            color: var(--primary);
-            font-size: 20px;
-        }
-
-        .why-card h3 {
-            color: var(--primary);
-            font-size: 12px;
-            line-height: 1.5;
-        }
-
-
-        /* =====================================================
-           TEACHER
-        ===================================================== */
-
-        .teacher-section {
-            padding: 0;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        }
-
-        .teacher-content {
-            background: var(--primary);
-            color: #fff;
-            padding: 65px 8%;
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
-
-        /* YOUR TEACHER PHOTO */
-
-        .teacher-photo {
-            flex: 0 0 175px;
-            width: 175px;
-            height: 175px;
-
-            border-radius: 50%;
-            border: 4px solid var(--gold);
-
-            background:
-                url("images/teacher.jpg")
-                center center / cover no-repeat;
-
-            box-shadow: 0 8px 30px rgba(0,0,0,.2);
-        }
-
-        .teacher-info .small-title {
-            color: var(--gold-light);
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        .teacher-info h2 {
-            font-family: "Playfair Display", serif;
-            font-size: 29px;
-            margin: 5px 0 12px;
-        }
-
-        .teacher-info p {
-            color: rgba(255,255,255,.83);
-            font-size: 12px;
-            line-height: 1.75;
-        }
-
-        .teacher-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--gold);
-            padding: 11px 16px;
-            margin-top: 17px;
-            border-radius: 5px;
-            font-size: 11px;
-            font-weight: 700;
-            transition: .3s;
-        }
-
-        .teacher-link:hover {
-            background: #bd9021;
-            transform: translateY(-2px);
-        }
-
-
-        /* =====================================================
-           WORLD
-        ===================================================== */
-
-        .world-section {
-            min-height: 310px;
-            padding: 55px 8%;
-            text-align: center;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-
-            background:
-                linear-gradient(
-                    rgba(255,255,255,.94),
-                    rgba(255,255,255,.94)
-                ),
-                url("https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg")
-                center/cover;
-        }
-
-        .world-section h2 {
-            color: var(--primary);
-            font-family: "Playfair Display", serif;
-            font-size: 25px;
-        }
-
-        .world-section p {
-            max-width: 540px;
-            margin: 13px auto;
-            color: var(--muted);
-            font-size: 12px;
-            line-height: 1.75;
-        }
-
-        .flags {
-            display: flex;
-            justify-content: center;
-            gap: 17px;
-            font-size: 29px;
-            margin: 9px 0 18px;
-        }
-
-        .world-btn {
-            align-self: center;
-            background: var(--primary);
-            color: #fff;
-            padding: 13px 22px;
-            border-radius: 6px;
-            font-size: 11px;
-            font-weight: 700;
-            transition: .3s;
-        }
-
-        .world-btn:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
-
-        /* =====================================================
-           STATS
-        ===================================================== */
-
-        .stats {
-            padding: 28px 0;
-            background: #fff;
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-        }
-
-        .stat {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            min-height: 75px;
-            border-right: 1px solid var(--border);
-        }
-
-        .stat:last-child {
-            border-right: 0;
-        }
-
-        .stat-icon {
-            color: var(--primary);
-            font-size: 29px;
-        }
-
-        .stat-number {
-            color: var(--gold);
-            font-size: 29px;
-            font-weight: 700;
-            line-height: 1.1;
-        }
-
-        .stat-label {
-            color: var(--muted);
-            font-size: 11px;
-            margin-top: 3px;
-        }
-
-
-        /* =====================================================
-           TESTIMONIALS
-        ===================================================== */
-
-        .testimonial-box {
-            max-width: 700px;
-            margin: auto;
-            text-align: center;
-            padding: 35px;
-
-            border: 1px solid var(--border);
-            border-radius: 14px;
-
-            box-shadow: var(--shadow-sm);
-        }
-
-        .testimonial-stars {
-            color: var(--gold);
-            font-size: 22px;
-            margin-bottom: 12px;
-        }
-
-        .testimonial-text {
-            color: var(--muted);
-            font-size: 13px;
-            line-height: 1.8;
-        }
-
-        .testimonial-name {
-            display: block;
-            color: var(--primary);
-            margin-top: 15px;
-            font-size: 13px;
-        }
-
-
-        /* =====================================================
-           FOOTER
-        ===================================================== */
-
-        .footer {
-            background: var(--primary-dark);
-            color: #fff;
-        }
-
-        .footer-main {
-            padding: 55px 0 40px;
-
-            display: grid;
-            grid-template-columns: 1fr 1.2fr 1fr;
-
-            gap: 50px;
-            align-items: center;
-        }
-
-        .footer-quran {
-            width: 235px;
-            height: 155px;
-
-            border: 4px solid var(--gold);
-            border-bottom: 0;
-            border-radius: 120px 120px 0 0;
-
-            overflow: hidden;
-
-            background:
-                linear-gradient(
-                    rgba(0,0,0,.08),
-                    rgba(0,0,0,.08)
-                ),
-                url("https://images.unsplash.com/photo-1585036156171-384164a8c675?auto=format&fit=crop&w=700&q=90")
-                center/cover;
-        }
-
-        .footer-column {
-            padding-left: 35px;
-            border-left: 1px solid rgba(255,255,255,.2);
-        }
-
-        .footer-column h3 {
-            color: var(--gold-light);
-            font-size: 14px;
-            margin-bottom: 17px;
-            letter-spacing: .5px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 11px;
-            margin: 10px 0;
-
-            font-size: 11px;
-            color: rgba(255,255,255,.88);
-        }
-
-        .contact-item i {
-            color: var(--gold-light);
-            width: 15px;
-        }
-
-        .footer-description {
-            color: rgba(255,255,255,.72);
-            font-size: 11px;
-            line-height: 1.7;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 9px;
-            margin-top: 16px;
-        }
-
-        .footer-social a {
-            width: 30px;
-            height: 30px;
-
-            border-radius: 6px;
-
-            background: #fff;
-            color: var(--primary);
-
-            display: grid;
-            place-items: center;
-
-            font-size: 13px;
-
-            transition: .3s;
-        }
-
-        .footer-social a:hover {
-            background: var(--gold);
-            color: #fff;
-            transform: translateY(-3px);
-        }
-
-        .copyright {
-            border-top: 1px solid rgba(255,255,255,.15);
-            text-align: center;
-
-            padding: 12px 15px;
-
-            font-size: 10px;
-            color: rgba(255,255,255,.65);
-        }
-
-
-        /* =====================================================
-           WHATSAPP
-        ===================================================== */
-
-        .whatsapp {
-            position: fixed;
-            right: 22px;
-            bottom: 22px;
-
-            width: 55px;
-            height: 55px;
-
-            border-radius: 50%;
-
-            background: #25d366;
-            color: #fff;
-
-            display: grid;
-            place-items: center;
-
-            font-size: 28px;
-
-            z-index: 999;
-
-            box-shadow: 0 8px 25px rgba(37,211,102,.35);
-
-            transition: .3s;
-        }
-
-        .whatsapp:hover {
-            transform: scale(1.08);
-        }
-
-
-        /* =====================================================
-           TABLET
-        ===================================================== */
-
-        @media (max-width: 1050px) {
-
-            .nav-links {
-                gap: 17px;
-            }
-
-            .course-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .why-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-
-            .why-card:nth-child(4) {
-                border-right: 0;
-            }
-
-            .why-card:nth-child(n+5) {
-                border-top: 1px solid var(--border);
-            }
-        }
-
-
-        /* =====================================================
-           MOBILE NAV
-        ===================================================== */
-
-        @media (max-width: 850px) {
-
-            .topbar-inner {
-                padding: 7px 0;
-            }
-
-            .topbar-inner,
-            .top-info {
-                flex-wrap: wrap;
-            }
-
-            .nav-inner {
-                min-height: 72px;
-            }
-
-            .menu-btn {
-                display: block;
-            }
-
-            .nav-links {
-                display: none;
-
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-
-                background: #fff;
-
-                border-top: 1px solid var(--border);
-
-                box-shadow: var(--shadow-md);
-
-                flex-direction: column;
-                align-items: stretch;
-
-                gap: 0;
-
-                padding: 10px 5%;
-            }
-
-            .nav-links.show {
-                display: flex;
-            }
-
-            .nav-links a {
-                padding: 13px 0;
-                border-bottom: 1px solid var(--border);
-            }
-
-            .nav-links a::after {
-                display: none;
-            }
-
-            .hero {
-                min-height: 570px;
-            }
-
-            .hero-inner {
-                min-height: 570px;
-            }
-
-            .teacher-section {
-                grid-template-columns: 1fr;
-            }
-
-            .teacher-content {
-                justify-content: center;
-            }
-
-            .footer-main {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .footer-quran {
-                margin: auto;
-            }
-        }
-
-
-        /* =====================================================
-           MOBILE
-        ===================================================== */
-
-        @media (max-width: 600px) {
-
-            .topbar {
-                font-size: 10px;
-            }
-
-            .topbar-inner {
-                flex-direction: column;
-                justify-content: center;
-                gap: 5px;
-            }
-
-            .top-info {
-                justify-content: center;
-                gap: 12px;
-            }
-
-            .logo-image {
-                width: 48px;
-                height: 48px;
-            }
-
-            .logo-content h1 {
-                font-size: 18px;
-            }
-
-            .logo-content p {
-                font-size: 9px;
-            }
-
-            .hero {
-                min-height: 620px;
-
-                background:
-                    linear-gradient(
-                        90deg,
-                        rgba(0,61,45,.97),
-                        rgba(0,77,58,.90)
-                    ),
-
-                    url("https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=1000&q=85")
-                    center/cover;
-            }
-
-            .hero-inner {
-                min-height: 620px;
-                text-align: center;
-            }
-
-            .hero-content {
-                padding: 45px 0 80px;
-                margin: auto;
-            }
-
-            .hero-line {
-                margin: 18px auto;
-            }
-
-            .hero-description {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .btn {
-                width: 100%;
-                max-width: 310px;
-            }
-
-            .section {
-                padding: 50px 0;
-            }
-
-            .course-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 11px;
-            }
-
-            .course-card {
-                padding: 18px 10px;
-            }
-
-            .course-icon {
-                width: 55px;
-                height: 55px;
-            }
-
-            .why-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .why-card {
-                border-right: 1px solid var(--border);
-            }
-
-            .why-card:nth-child(even) {
-                border-right: 0;
-            }
-
-            .why-card:nth-child(n+3) {
-                border-top: 1px solid var(--border);
-            }
-
-            .teacher-content {
-                flex-direction: column;
-                text-align: center;
-                padding: 50px 7%;
-            }
-
-            .teacher-photo {
-                flex-basis: 150px;
-                width: 150px;
-                height: 150px;
-            }
-
-            .world-section {
-                padding: 45px 6%;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .stat {
-                border-bottom: 1px solid var(--border);
-            }
-
-            .stat:nth-child(2),
-            .stat:nth-child(4) {
-                border-right: 0;
-            }
-
-            .stat:nth-child(3),
-            .stat:nth-child(4) {
-                border-bottom: 0;
-            }
-
-            .footer-main {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 30px;
-            }
-
-            .footer-quran {
-                width: 210px;
-                margin: auto;
-            }
-
-            .footer-column {
-                border-left: 0;
-                border-top: 1px solid rgba(255,255,255,.2);
-                padding: 25px 0 0;
-            }
-
-            .contact-item {
-                justify-content: center;
-            }
-
-            .footer-social {
-                justify-content: center;
-            }
-
-            .whatsapp {
-                width: 50px;
-                height: 50px;
-                right: 15px;
-                bottom: 15px;
-            }
-        }
-
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Imran Ashraf | Online Quran Academy</title>
+  <meta name="description" content="Imran Ashraf Online Quran Academy - Learn Quran online with Tajweed and Islamic Education for kids and adults.">
+  <meta name="keywords" content="Online Quran Academy, Quran with Tajweed, Noorani Qaida, Quran Memorization, Islamic Studies, Online Quran Classes">
+  <meta name="author" content="Imran Ashraf Online Quran Academy">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#063b2c">
+  <meta property="og:title" content="Imran Ashraf | Online Quran Academy">
+  <meta property="og:description" content="Learn Quran online with Tajweed and Islamic Education.">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #064635;
+      --primary-2: #0a6b50;
+      --primary-dark: #022b21;
+      --gold: #c7a13a;
+      --gold-light: #ead58a;
+      --cream: #fbfaf5;
+      --white: #ffffff;
+      --text: #24342d;
+      --muted: #6b7771;
+      --border: #e4e9e5;
+      --surface: #f4f7f4;
+      --shadow-sm: 0 10px 30px rgba(3, 48, 36, .08);
+      --shadow-md: 0 22px 60px rgba(3, 48, 36, .14);
+      --radius: 20px;
+      --container: 1180px;
+      --transition: 280ms ease;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 8% 20%, rgba(199,161,58,.035), transparent 24%),
+        radial-gradient(circle at 92% 62%, rgba(6,70,53,.035), transparent 25%),
+        var(--white);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    body.menu-open { overflow: hidden; }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button { font: inherit; }
+    ::selection { background: var(--gold); color: var(--white); }
+
+    .container {
+      width: min(92%, var(--container));
+      margin-inline: auto;
+    }
+
+    .skip-link {
+      position: fixed;
+      left: 15px;
+      top: -100px;
+      z-index: 9999;
+      background: var(--primary);
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 8px;
+    }
+
+    .skip-link:focus { top: 15px; }
+
+    /* TOP BAR */
+    .topbar {
+      background: var(--primary-dark);
+      color: rgba(255,255,255,.9);
+      font-size: 12px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .topbar-inner {
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .top-info, .top-social {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .top-info a {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: var(--transition);
+    }
+
+    .top-info a:hover { color: var(--gold-light); }
+
+    .top-info i { color: var(--gold-light); }
+
+    .top-social span {
+      opacity: .65;
+      margin-right: 2px;
+    }
+
+    .top-social a {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.1);
+      display: grid;
+      place-items: center;
+      font-size: 11px;
+      transition: var(--transition);
+    }
+
+    .top-social a:hover {
+      background: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    /* NAVBAR */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(199,161,58,.16);
+      transition: var(--transition);
+    }
+
+    .navbar.scrolled {
+      box-shadow: 0 8px 30px rgba(0,0,0,.08);
+    }
+
+    .nav-inner {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 230px;
+    }
+
+    .logo-image {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .logo-content h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 21px;
+      line-height: 1.1;
+      color: var(--primary);
+      letter-spacing: .2px;
+    }
+
+    .logo-content p {
+      color: var(--gold);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      margin-top: 5px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding: 30px 0;
+      color: #26362f;
+      font-size: 13px;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 100%;
+      bottom: 20px;
+      height: 2px;
+      border-radius: 5px;
+      background: var(--gold);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--primary); }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after { right: 0; }
+
+    .nav-cta {
+      padding: 10px 15px !important;
+      border-radius: 8px;
+      background: var(--primary);
+      color: #fff !important;
+    }
+
+    .nav-cta::after { display: none; }
+
+    .nav-cta:hover {
+      background: var(--gold) !important;
+      color: #fff !important;
+      transform: translateY(-2px);
+    }
+
+    .menu-btn {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #fff;
+      color: var(--primary);
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(2,38,29,.99) 0%, rgba(5,70,52,.94) 42%, rgba(5,70,52,.64) 70%, rgba(0,0,0,.20) 100%),
+        url("https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=1800&q=90")
+        center/cover no-repeat;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      right: -160px;
+      top: -130px;
+      border: 1px solid rgba(231,201,107,.2);
+      border-radius: 50%;
+      box-shadow: 0 0 0 45px rgba(231,201,107,.04), 0 0 0 90px rgba(231,201,107,.025);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: -3%;
+      right: -3%;
+      bottom: -45px;
+      height: 85px;
+      background: #fff;
+      border-radius: 50% 50% 0 0;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      width: min(92%, var(--container));
+      padding: 75px 0 105px;
+    }
+
+    .hero-content {
+      max-width: 680px;
+      color: #fff;
+      animation: heroIn .8s ease both;
+    }
+
+    @keyframes heroIn {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .eyebrow-light {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--gold-light);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .eyebrow-light::before {
+      content: "";
+      width: 30px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(45px, 6vw, 74px);
+      line-height: 1;
+      letter-spacing: .5px;
+    }
+
+    .hero-title {
+      color: var(--gold-light);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(25px, 3vw, 38px);
+      font-weight: 700;
+      margin-top: 8px;
+    }
+
+    .hero-line {
+      width: 430px;
+      max-width: 100%;
+      height: 1px;
+      background: rgba(255,255,255,.35);
+      margin: 24px 0;
+      position: relative;
+    }
+
+    .hero-line::after {
+      content: "✦";
+      position: absolute;
+      left: 50%;
+      top: -13px;
+      transform: translateX(-50%);
+      color: var(--gold-light);
+      background: var(--primary-2);
+      padding: 0 9px;
+      font-size: 13px;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(20px, 2.4vw, 27px);
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 14px;
+    }
+
+    .hero-description {
+      max-width: 570px;
+      color: rgba(255,255,255,.82);
+      font-size: 15px;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      min-height: 50px;
+      padding: 0 21px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border-radius: 9px;
+      border: 1px solid rgba(255,255,255,.45);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .2px;
+      transition: var(--transition);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(0,0,0,.18);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .btn-gold:hover { background: #b88820; }
+
+    .btn-outline { background: rgba(255,255,255,.07); }
+
+    /* GENERAL SECTIONS */
+    .section { padding: 88px 0; }
+
+    .section-heading {
+      position: relative;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .section-heading .eyebrow {
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2.2px;
+      margin-bottom: 8px;
+    }
+
+    .section-heading h2 {
+      color: var(--primary);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(31px, 4vw, 43px);
+      line-height: 1.2;
+    }
+
+    .section-heading p {
+      max-width: 680px;
+      margin: 13px auto 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .heading-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 13px;
+    }
+
+    .heading-line span {
+      width: 72px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .heading-line i {
+      color: var(--gold);
+      font-size: 12px;
+    }
+
+    /* ABOUT INTRO */
+    .about-intro {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 55px;
+      align-items: center;
+      margin-bottom: 75px;
+    }
+
+    .about-copy .mini-label {
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .about-copy h3 {
+      color: var(--primary);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(28px, 3vw, 39px);
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .about-points {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .about-point {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .about-point i { color: var(--gold); margin-top: 4px; }
+
+    .about-visual {
+      position: relative;
+      min-height: 370px;
+      border-radius: 24px;
+      overflow: hidden;
+      background:
+        linear-gradient(145deg, rgba(6,59,44,.2), rgba(6,59,44,.7)),
+        url("https://images.unsplash.com/photo-1585036156171-384164a8c675?auto=format&fit=crop&w=1000&q=90")
+        center/cover;
+      box-shadow: var(--shadow-md);
+    }
+
+    .about-badge {
+      position: absolute;
+      left: 22px;
+      bottom: 22px;
+      background: rgba(255,255,255,.95);
+      border-left: 4px solid var(--gold);
+      border-radius: 12px;
+      padding: 15px 18px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .about-badge strong {
+      display: block;
+      color: var(--primary);
+      font-family: "Playfair Display", serif;
+      font-size: 21px;
+    }
+
+    .about-badge span {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    /* COURSES */
+    .courses { background: #fff; }
+
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .course-card {
+      position: relative;
+      padding: 31px 26px;
+      border: 1px solid rgba(6,70,53,.10);
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, #ffffff, #fbfcfa);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      overflow: hidden;
+    }
+
+    .course-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--gold));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: var(--transition);
+    }
+
+    .course-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(201,154,46,.4);
+      box-shadow: var(--shadow-md);
+    }
+
+    .course-card:hover::before { transform: scaleX(1); }
+
+    .course-icon {
+      width: 62px;
+      height: 62px;
+      margin-bottom: 19px;
+      border-radius: 16px;
+      background: #edf5f0;
+      display: grid;
+      place-items: center;
+      color: var(--primary);
+      font-size: 25px;
+      transition: var(--transition);
+    }
+
+    .course-card:hover .course-icon {
+      background: var(--primary);
+      color: #fff;
+      transform: rotate(-3deg);
+    }
+
+    .course-card h3 {
+      color: var(--primary);
+      font-size: 17px;
+      line-height: 1.35;
+      margin-bottom: 9px;
+    }
+
+    .course-card p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    /* WHY */
+    .why {
+      background: var(--surface);
+      border-block: 1px solid #edf0eb;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .why-card {
+      position: relative;
+      padding: 30px 18px 26px;
+      text-align: center;
+      background: linear-gradient(145deg, #ffffff, #f9fbf9);
+      border: 1px solid rgba(6,70,53,.10);
+      border-radius: 18px;
+      transition: var(--transition);
+      box-shadow: 0 7px 24px rgba(3,48,36,.045);
+      overflow: hidden;
+    }
+
+    .why-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--gold));
+      transform: scaleX(.15);
+      transform-origin: center;
+      transition: var(--transition);
+    }
+
+    .why-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(199,161,58,.42);
+    }
+
+    .why-card:hover::before { transform: scaleX(1); }
+
+    .why-icon {
+      width: 54px;
+      height: 54px;
+      margin: 0 auto 14px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #edf6f1, #e4f0e9);
+      border: 1px solid rgba(199,161,58,.18);
+      display: grid;
+      place-items: center;
+      color: var(--primary);
+      font-size: 20px;
+      box-shadow: inset 0 0 0 5px rgba(255,255,255,.55);
+    }
+
+    .why-card h3 {
+      color: var(--primary);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    /* TEACHER */
+    .teacher-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .teacher-content {
+      background:
+        radial-gradient(circle at 10% 15%, rgba(234,213,138,.08), transparent 28%),
+        linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: #fff;
+      padding: 70px 8%;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .teacher-photo {
+      flex: 0 0 170px;
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      border: 4px solid var(--gold);
+      background: url("images/teacher.jpg") center/cover no-repeat;
+      box-shadow: 0 12px 35px rgba(0,0,0,.25);
+    }
+
+    .teacher-info .small-title {
+      color: var(--gold-light);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+    }
+
+    .teacher-info h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 31px;
+      margin: 5px 0 12px;
+    }
+
+    .teacher-info p {
+      color: rgba(255,255,255,.8);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .teacher-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold);
+      color: #fff;
+      padding: 11px 16px;
+      margin-top: 18px;
+      border-radius: 7px;
+      font-size: 11px;
+      font-weight: 700;
+      transition: var(--transition);
+    }
+
+    .teacher-link:hover {
+      background: #b88820;
+      transform: translateY(-2px);
+    }
+
+    .world-section {
+      min-height: 340px;
+      padding: 60px 8%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background:
+        linear-gradient(rgba(255,255,255,.94), rgba(255,255,255,.94)),
+        url("https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg")
+        center/cover;
+    }
+
+    .world-section h2 {
+      color: var(--primary);
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+    }
+
+    .world-section p {
+      max-width: 550px;
+      margin: 13px auto;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .flags {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      font-size: 28px;
+      margin: 9px 0 20px;
+    }
+
+    .world-btn {
+      align-self: center;
+      background: var(--primary);
+      color: #fff;
+      padding: 13px 21px;
+      border-radius: 7px;
+      font-size: 11px;
+      font-weight: 700;
+      transition: var(--transition);
+    }
+
+    .world-btn:hover {
+      background: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    /* STATS */
+    .stats {
+      padding: 25px 0;
+      background: #fff;
+      border-block: 1px solid var(--border);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .stat {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      min-height: 75px;
+      border-right: 1px solid var(--border);
+    }
+
+    .stat:last-child { border-right: 0; }
+
+    .stat-icon { color: var(--primary); font-size: 27px; }
+
+    .stat-number {
+      color: var(--gold);
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 3px;
+    }
+
+    /* TESTIMONIAL */
+    .testimonial-wrap {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .testimonial-box {
+      position: relative;
+      padding: 30px;
+      border: 1px solid rgba(6,70,53,.10);
+      border-radius: 18px;
+      background: linear-gradient(145deg, #ffffff, #fbfcfa);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      overflow: hidden;
+    }
+
+    .testimonial-box::after {
+      content: "“";
+      position: absolute;
+      right: 20px;
+      top: 7px;
+      color: rgba(199,161,58,.12);
+      font-family: "Playfair Display", serif;
+      font-size: 80px;
+      line-height: 1;
+    }
+
+    .testimonial-box:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(199,161,58,.34);
+    }
+
+    .testimonial-stars {
+      color: var(--gold);
+      font-size: 17px;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    .testimonial-text {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .testimonial-name {
+      display: block;
+      color: var(--primary);
+      margin-top: 15px;
+      font-size: 12px;
+    }
+
+    /* CTA */
+    .cta {
+      padding: 70px 0;
+      background:
+        linear-gradient(100deg, rgba(2,39,29,.99), rgba(6,91,68,.94)),
+        url("https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
+      color: #fff;
+    }
+
+    .cta-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .cta h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(29px, 4vw, 42px);
+      line-height: 1.2;
+    }
+
+    .cta p {
+      color: rgba(255,255,255,.78);
+      margin-top: 9px;
+      font-size: 13px;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* FOOTER */
+    .footer {
+      position: relative;
+      background:
+        radial-gradient(circle at 85% 15%, rgba(199,161,58,.07), transparent 25%),
+        var(--primary-dark);
+      color: #fff;
+    }
+
+    .footer-main {
+      padding: 60px 0 45px;
+      display: grid;
+      grid-template-columns: 1.05fr 1fr 1fr;
+      gap: 50px;
+    }
+
+    .footer-brand h2 {
+      font-family: "Playfair Display", serif;
+      color: #fff;
+      font-size: 24px;
+    }
+
+    .footer-brand p {
+      color: rgba(255,255,255,.66);
+      font-size: 12px;
+      line-height: 1.8;
+      max-width: 330px;
+      margin-top: 12px;
+    }
+
+    .footer-column {
+      padding-left: 28px;
+      border-left: 1px solid rgba(255,255,255,.14);
+    }
+
+    .footer-column h3 {
+      color: var(--gold-light);
+      font-size: 13px;
+      margin-bottom: 17px;
+      letter-spacing: .8px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      margin: 11px 0;
+      font-size: 12px;
+      color: rgba(255,255,255,.84);
+    }
+
+    .contact-item i {
+      color: var(--gold-light);
+      width: 15px;
+      margin-top: 3px;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 9px;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,.72);
+      font-size: 12px;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-light);
+      padding-left: 4px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 9px;
+      margin-top: 18px;
+    }
+
+    .footer-social a {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(255,255,255,.1);
+      display: grid;
+      place-items: center;
+      font-size: 13px;
+      transition: var(--transition);
+    }
+
+    .footer-social a:hover {
+      background: var(--gold);
+      transform: translateY(-3px);
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,.12);
+      text-align: center;
+      padding: 14px 15px;
+      font-size: 10px;
+      color: rgba(255,255,255,.58);
+    }
+
+    /* WHATSAPP */
+    .whatsapp {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #25d366;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      z-index: 999;
+      box-shadow: 0 10px 30px rgba(37,211,102,.28), 0 0 0 6px rgba(37,211,102,.08);
+      transition: var(--transition);
+    }
+
+    .whatsapp:hover {
+      transform: scale(1.08);
+      box-shadow: 0 14px 35px rgba(37,211,102,.42);
+    }
+
+    /* BACK TO TOP */
+    .back-top {
+      position: fixed;
+      right: 24px;
+      bottom: 90px;
+      width: 40px;
+      height: 40px;
+      border: 0;
+      border-radius: 10px;
+      background: var(--primary);
+      color: #fff;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: var(--transition);
+      z-index: 998;
+    }
+
+    .back-top.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1050px) {
+      .nav-links { gap: 15px; }
+      .nav-links a { font-size: 12px; }
+      .about-intro { gap: 35px; }
+      .course-grid { grid-template-columns: repeat(2, 1fr); }
+      .why-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 850px) {
+      .topbar-inner { padding: 7px 0; }
+      .topbar-inner, .top-info { flex-wrap: wrap; }
+
+      .nav-inner { min-height: 72px; }
+      .menu-btn { display: grid; place-items: center; }
+
+      .nav-links {
+        position: fixed;
+        top: 72px;
+        left: 0;
+        right: 0;
+        max-height: calc(100vh - 72px);
+        overflow-y: auto;
+        padding: 12px 5%;
+        background: #fff;
+        border-top: 1px solid var(--border);
+        box-shadow: var(--shadow-md);
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      .nav-links.show { display: flex; }
+
+      .nav-links a {
+        padding: 14px 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links a::after { display: none; }
+      .nav-cta { text-align: center; margin: 10px 0; }
+
+      .about-intro { grid-template-columns: 1fr; }
+      .about-visual { min-height: 320px; }
+
+      .teacher-section { grid-template-columns: 1fr; }
+
+      .footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+
+      .footer-column { padding-left: 20px; }
+      .cta-inner { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 600px) {
+      .topbar { font-size: 10px; }
+      .topbar-inner {
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+      }
+      .top-info { justify-content: center; gap: 10px; }
+      .top-social { display: none; }
+
+      .logo { min-width: 0; }
+      .logo-image { width: 46px; height: 46px; }
+      .logo-content h1 { font-size: 17px; }
+      .logo-content p { font-size: 8px; letter-spacing: 1px; }
+
+      .hero {
+        min-height: 650px;
+        background:
+          linear-gradient(90deg, rgba(2,36,27,.96), rgba(5,67,49,.88)),
+          url("https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=1000&q=85")
+          center/cover;
+      }
+
+      .hero-inner {
+        padding: 55px 0 90px;
+        text-align: center;
+      }
+
+      .hero-content { margin-inline: auto; }
+      .eyebrow-light { justify-content: center; }
+      .hero-line { margin: 20px auto; }
+      .hero-description { margin-inline: auto; }
+
+      .hero-buttons { justify-content: center; }
+      .btn { width: 100%; max-width: 320px; }
+
+      .section { padding: 62px 0; }
+
+      .about-points { grid-template-columns: 1fr; }
+      .course-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+
+      .why-card { padding: 22px 10px; }
+      .why-card h3 { font-size: 11px; }
+
+      .teacher-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 55px 7%;
+      }
+
+      .teacher-photo {
+        width: 145px;
+        height: 145px;
+        flex-basis: 145px;
+      }
+
+      .world-section { padding: 48px 7%; }
+      .flags { font-size: 24px; gap: 12px; }
+
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat {
+        min-height: 85px;
+        border-bottom: 1px solid var(--border);
+      }
+      .stat:nth-child(2n) { border-right: 0; }
+      .stat:nth-child(n+3) { border-bottom: 0; }
+
+      .testimonial-wrap { grid-template-columns: 1fr; }
+
+      .footer-main {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 28px;
+      }
+
+      .footer-brand p { margin-inline: auto; }
+      .footer-column {
+        padding: 25px 0 0;
+        border-left: 0;
+        border-top: 1px solid rgba(255,255,255,.14);
+      }
+
+      .contact-item { justify-content: center; }
+      .footer-social { justify-content: center; }
+
+      .cta { padding: 55px 0; }
+      .cta-actions { width: 100%; }
+      .cta-actions .btn { max-width: none; }
+
+      .whatsapp {
+        width: 50px;
+        height: 50px;
+        right: 15px;
+        bottom: 15px;
+        font-size: 24px;
+      }
+
+      .back-top {
+        right: 15px;
+        bottom: 76px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
 </head>
 
-
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-
-<!-- =====================================================
-     TOP BAR
-===================================================== -->
-
-<div class="topbar">
-
+  <!-- TOP BAR -->
+  <div class="topbar">
     <div class="container topbar-inner">
-
-        <div class="top-info">
-
-            <a href="mailto:info@imranashrafacademy.com">
-                <i class="fa-solid fa-envelope"></i>
-                info@imranashrafacademy.com
-            </a>
-
-            <a href="tel:+923498982892">
-                <i class="fa-brands fa-whatsapp"></i>
-                0349 8982892
-            </a>
-
-        </div>
-
-
-        <div class="top-social">
-
-            <span>Follow Us:</span>
-
-            <a href="#" aria-label="Facebook">
-                <i class="fa-brands fa-facebook-f"></i>
-            </a>
-
-            <a href="#" aria-label="Instagram">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-
-            <a href="#" aria-label="YouTube">
-                <i class="fa-brands fa-youtube"></i>
-            </a>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
-     NAVBAR
-===================================================== -->
-
-<header class="navbar">
-
-    <div class="container nav-inner">
-
-
-        <!-- LOGO -->
-
-        <a href="#home" class="logo">
-
-            <img
-                src="images/logo.png"
-                alt="Imran Ashraf Online Quran Academy"
-                class="logo-image"
-            >
-
-            <div class="logo-content">
-
-                <h1>
-                    IMRAN ASHRAF
-                </h1>
-
-                <p>
-                    ONLINE QURAN ACADEMY
-                </p>
-
-            </div>
-
+      <div class="top-info">
+        <a href="mailto:info@imranashrafacademy.com">
+          <i class="fa-solid fa-envelope"></i>
+          <span>info@imranashrafacademy.com</span>
         </a>
+        <a href="https://wa.me/923498982892" target="_blank" rel="noopener">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>0349 8982892</span>
+        </a>
+      </div>
 
-
-        <!-- MOBILE MENU BUTTON -->
-
-        <button
-            class="menu-btn"
-            id="menuBtn"
-            aria-label="Open Menu"
-        >
-            <i class="fa-solid fa-bars"></i>
-        </button>
-
-
-        <!-- NAVIGATION -->
-
-        <nav class="nav-links" id="navLinks">
-
-            <a class="active" href="#home">
-                Home
-            </a>
-
-            <a href="#about">
-                About Us
-            </a>
-
-            <a href="#courses">
-                Courses
-            </a>
-
-            <a href="#why">
-                Why Choose Us
-            </a>
-
-            <a href="#teacher">
-                Our Teacher
-            </a>
-
-            <a href="#testimonials">
-                Testimonials
-            </a>
-
-            <a href="#contact">
-                Contact Us
-            </a>
-
-        </nav>
-
+      <div class="top-social" aria-label="Social media">
+        <span>Follow Us:</span>
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      </div>
     </div>
+  </div>
 
-</header>
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="logo" aria-label="Imran Ashraf Online Quran Academy Home">
+        <img src="images/logo.png" alt="Imran Ashraf Online Quran Academy logo" class="logo-image">
+        <div class="logo-content">
+          <h1>IMRAN ASHRAF</h1>
+          <p>ONLINE QURAN ACADEMY</p>
+        </div>
+      </a>
 
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <i class="fa-solid fa-bars"></i>
+      </button>
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a class="active" href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#courses">Courses</a>
+        <a href="#why">Why Choose Us</a>
+        <a href="#teacher">Our Teacher</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#contact" class="nav-cta">Free Trial</a>
+      </nav>
+    </div>
+  </header>
 
-<section class="hero" id="home">
-
-    <div class="container hero-inner">
-
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-inner">
         <div class="hero-content">
+          <div class="eyebrow-light">Welcome to</div>
+          <h2>IMRAN ASHRAF</h2>
+          <div class="hero-title">ONLINE QURAN ACADEMY</div>
+          <div class="hero-line"></div>
 
-            <div class="hero-welcome">
-                Welcome to
-            </div>
+          <div class="hero-subtitle">
+            Learn Quran Online with Tajweed<br>
+            &amp; Islamic Education
+          </div>
 
-            <h2>
-                IMRAN ASHRAF
-            </h2>
+          <p class="hero-description">
+            Quality Quranic education for kids &amp; adults from the comfort of your home.
+          </p>
 
-            <div class="hero-title">
-                ONLINE QURAN ACADEMY
-            </div>
-
-            <div class="hero-line"></div>
-
-            <div class="hero-subtitle">
-                Learn Quran Online with Tajweed
-                <br>
-                & Islamic Education
-            </div>
-
-            <p class="hero-description">
-                Quality Quranic education for kids & adults
-                from the comfort of your home.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="#contact" class="btn">
-
-                    <i class="fa-regular fa-calendar-check"></i>
-
-                    BOOK A FREE TRIAL CLASS
-
-                </a>
-
-
-                <a
-                    href="https://wa.me/923498982892"
-                    class="btn btn-gold"
-                    target="_blank"
-                >
-
-                    <i class="fa-brands fa-whatsapp"></i>
-
-                    CONTACT US ON WHATSAPP
-
-                </a>
-
-            </div>
-
+          <div class="hero-buttons">
+            <a href="#contact" class="btn btn-outline">
+              <i class="fa-regular fa-calendar-check"></i>
+              BOOK A FREE TRIAL CLASS
+            </a>
+            <a href="https://wa.me/923498982892" class="btn btn-gold" target="_blank" rel="noopener">
+              <i class="fa-brands fa-whatsapp"></i>
+              CONTACT US ON WHATSAPP
+            </a>
+          </div>
         </div>
+      </div>
+    </section>
 
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     COURSES
-===================================================== -->
-
-<section class="section courses" id="courses">
-
-    <div class="container">
-
-
-        <div class="section-heading">
-
-            <div class="eyebrow">
-                What We Teach
-            </div>
-
-            <h2>
-                Our Courses
-            </h2>
-
-            <div class="heading-line">
-
-                <span></span>
-
-                <i class="fa-solid fa-star-and-crescent"></i>
-
-                <span></span>
-
-            </div>
-
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="about-intro">
+          <div class="about-copy">
+            <div class="mini-label">About The Academy</div>
+            <h3>Learn the Quran with confidence, care and proper Tajweed.</h3>
             <p>
-                Learn Quran and essential Islamic knowledge
-                through simple, interactive and student-friendly
-                online classes.
+              Imran Ashraf Online Quran Academy is dedicated to helping students learn
+              the Holy Quran with proper Tajweed and Islamic manners.
+            </p>
+            <p>
+              Our online classes are designed for kids and adults with a simple,
+              interactive and student-friendly learning approach.
             </p>
 
+            <div class="about-points">
+              <div class="about-point">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>One-to-One Online Classes</span>
+              </div>
+              <div class="about-point">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Flexible Timings</span>
+              </div>
+              <div class="about-point">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Proper Tajweed &amp; Makharij</span>
+              </div>
+              <div class="about-point">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Kids &amp; Adults Programs</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-visual" aria-label="Quran learning">
+            <div class="about-badge">
+              <strong>Learn From Anywhere</strong>
+              <span>Online Quran education worldwide</span>
+            </div>
+          </div>
         </div>
-
-
-        <div class="course-grid">
-
-
-            <!-- COURSE 1 -->
-
-            <article class="course-card">
-
-                <div class="course-icon">
-                    <i class="fa-solid fa-book-quran"></i>
-                </div>
-
-                <h3>
-                    Noorani Qaida
-                </h3>
-
-                <p>
-                    Learn the basics of Quran reading with
-                    correct pronunciation and foundation.
-                </p>
-
-            </article>
-
-
-            <!-- COURSE 2 -->
-
-            <article class="course-card">
-
-                <div class="course-icon">
-                    <i class="fa-solid fa-book-open-reader"></i>
-                </div>
-
-                <h3>
-                    Quran Reading with Tajweed
-                </h3>
-
-                <p>
-                    Read the Holy Quran with proper Tajweed
-                    rules and correct makharij.
-                </p>
-
-            </article>
-
-
-            <!-- COURSE 3 -->
-
-            <article class="course-card">
-
-                <div class="course-icon">
-                    <i class="fa-solid fa-book"></i>
-                </div>
-
-                <h3>
-                    Quran Memorization
-                </h3>
-
-                <p>
-                    Memorize Quran through easy and effective
-                    learning techniques.
-                </p>
-
-            </article>
-
-
-            <!-- COURSE 4 -->
-
-            <article class="course-card">
-
-                <div class="course-icon">
-                    <i class="fa-solid fa-mosque"></i>
-                </div>
-
-                <h3>
-                    Islamic Studies
-                </h3>
-
-                <p>
-                    Learn basic Islamic education, duas,
-                    beliefs and Islamic manners.
-                </p>
-
-            </article>
-
-
-            <!-- COURSE 5 -->
-
-            <article class="course-card">
-
-                <div class="course-icon">
-                    <i class="fa-solid fa-hands-praying"></i>
-                </div>
-
-                <h3>
-                    Salah & Duas
-                </h3>
-
-                <p>
-                    Learn Salah step-by-step along with
-                    essential daily duas.
-                </p>
-
-            </article>
-
-
-            <!-- COURSE 6 -->
-
-            <article class="course-card">
-
-                <div class="course-icon">
-                    <i class="fa-solid fa-children"></i>
-                </div>
-
-                <h3>
-                    Islamic Manners for Kids
-                </h3>
-
-                <p>
-                    Develop good manners, character and
-                    Islamic values in children.
-                </p>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     WHY CHOOSE US
-===================================================== -->
-
-<section class="section why" id="why">
-
-    <div class="container">
-
 
         <div class="section-heading">
-
-            <div class="eyebrow">
-                Why Students Choose Us
-            </div>
-
-            <h2>
-                Why Choose Us?
-            </h2>
-
-            <div class="heading-line">
-
-                <span></span>
-
-                <i class="fa-solid fa-star-and-crescent"></i>
-
-                <span></span>
-
-            </div>
-
+          <div class="eyebrow">What We Teach</div>
+          <h2>Our Courses</h2>
+          <div class="heading-line">
+            <span></span>
+            <i class="fa-solid fa-star-and-crescent"></i>
+            <span></span>
+          </div>
+          <p>
+            Learn Quran and essential Islamic knowledge through simple, interactive
+            and student-friendly online classes.
+          </p>
         </div>
 
+        <div class="course-grid" id="courses">
+          <article class="course-card">
+            <div class="course-icon"><i class="fa-solid fa-book-quran"></i></div>
+            <h3>Noorani Qaida</h3>
+            <p>Learn the basics of Quran reading with correct pronunciation and foundation.</p>
+          </article>
+
+          <article class="course-card">
+            <div class="course-icon"><i class="fa-solid fa-book-open-reader"></i></div>
+            <h3>Quran Reading with Tajweed</h3>
+            <p>Read the Holy Quran with proper Tajweed rules and correct makharij.</p>
+          </article>
+
+          <article class="course-card">
+            <div class="course-icon"><i class="fa-solid fa-book"></i></div>
+            <h3>Quran Memorization</h3>
+            <p>Memorize Quran through easy and effective learning techniques.</p>
+          </article>
+
+          <article class="course-card">
+            <div class="course-icon"><i class="fa-solid fa-mosque"></i></div>
+            <h3>Islamic Studies</h3>
+            <p>Learn basic Islamic education, duas, beliefs and Islamic manners.</p>
+          </article>
+
+          <article class="course-card">
+            <div class="course-icon"><i class="fa-solid fa-hands-praying"></i></div>
+            <h3>Salah &amp; Duas</h3>
+            <p>Learn Salah step-by-step along with essential daily duas.</p>
+          </article>
+
+          <article class="course-card">
+            <div class="course-icon"><i class="fa-solid fa-children"></i></div>
+            <h3>Islamic Manners for Kids</h3>
+            <p>Develop good manners, character and Islamic values in children.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="section why" id="why">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Why Students Choose Us</div>
+          <h2>Why Choose Us?</h2>
+          <div class="heading-line">
+            <span></span>
+            <i class="fa-solid fa-star-and-crescent"></i>
+            <span></span>
+          </div>
+        </div>
 
         <div class="why-grid">
+          <div class="why-card">
+            <div class="why-icon"><i class="fa-solid fa-laptop"></i></div>
+            <h3>One-to-One<br>Online Classes</h3>
+          </div>
 
+          <div class="why-card">
+            <div class="why-icon"><i class="fa-solid fa-user-graduate"></i></div>
+            <h3>Qualified &amp;<br>Experienced Teacher</h3>
+          </div>
 
-            <div class="why-card">
+          <div class="why-card">
+            <div class="why-icon"><i class="fa-solid fa-book-open"></i></div>
+            <h3>Quran with<br>Proper Tajweed</h3>
+          </div>
 
-                <div class="why-icon">
-                    <i class="fa-solid fa-laptop"></i>
-                </div>
+          <div class="why-card">
+            <div class="why-icon"><i class="fa-regular fa-clock"></i></div>
+            <h3>Flexible<br>Timings</h3>
+          </div>
 
-                <h3>
-                    One-to-One
-                    <br>
-                    Online Classes
-                </h3>
+          <div class="why-card">
+            <div class="why-icon"><i class="fa-solid fa-people-group"></i></div>
+            <h3>Classes for<br>Kids &amp; Adults</h3>
+          </div>
 
-            </div>
+          <div class="why-card">
+            <div class="why-icon"><i class="fa-solid fa-globe"></i></div>
+            <h3>Learn from<br>Anywhere</h3>
+          </div>
 
-
-            <div class="why-card">
-
-                <div class="why-icon">
-                    <i class="fa-solid fa-user-graduate"></i>
-                </div>
-
-                <h3>
-                    Qualified &
-                    <br>
-                    Experienced Teacher
-                </h3>
-
-            </div>
-
-
-            <div class="why-card">
-
-                <div class="why-icon">
-                    <i class="fa-solid fa-book-open"></i>
-                </div>
-
-                <h3>
-                    Quran with
-                    <br>
-                    Proper Tajweed
-                </h3>
-
-            </div>
-
-
-            <div class="why-card">
-
-                <div class="why-icon">
-                    <i class="fa-regular fa-clock"></i>
-                </div>
-
-                <h3>
-                    Flexible
-                    <br>
-                    Timings
-                </h3>
-
-            </div>
-
-
-            <div class="why-card">
-
-                <div class="why-icon">
-                    <i class="fa-solid fa-people-group"></i>
-                </div>
-
-                <h3>
-                    Classes for
-                    <br>
-                    Kids & Adults
-                </h3>
-
-            </div>
-
-
-            <div class="why-card">
-
-                <div class="why-icon">
-                    <i class="fa-solid fa-globe"></i>
-                </div>
-
-                <h3>
-                    Learn from
-                    <br>
-                    Anywhere
-                </h3>
-
-            </div>
-
-
-            <div class="why-card">
-
-                <div class="why-icon">
-                    <i class="fa-solid fa-gift"></i>
-                </div>
-
-                <h3>
-                    Free Trial
-                    <br>
-                    Class
-                </h3>
-
-            </div>
-
+          <div class="why-card">
+            <div class="why-icon"><i class="fa-solid fa-gift"></i></div>
+            <h3>Free Trial<br>Class</h3>
+          </div>
         </div>
+      </div>
+    </section>
 
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     TEACHER + WORLD
-===================================================== -->
-
-<section class="teacher-section" id="about">
-
-
-    <!-- TEACHER -->
-
-    <div class="teacher-content" id="teacher">
-
-
-        <!-- YOUR TEACHER IMAGE -->
-
-        <div class="teacher-photo"></div>
-
+    <!-- TEACHER + WORLD -->
+    <section class="teacher-section">
+      <div class="teacher-content" id="teacher">
+        <div class="teacher-photo" role="img" aria-label="Imran Ashraf teacher photo"></div>
 
         <div class="teacher-info">
-
-            <div class="small-title">
-                ABOUT YOUR TEACHER
-            </div>
-
-            <h2>
-                IMRAN ASHRAF
-            </h2>
-
-            <p>
-                I am an Online Quran Teacher dedicated to helping
-                students learn the Holy Quran with proper Tajweed
-                and Islamic manners. I teach Quran Reading,
-                Tajweed, Noorani Qaida, Salah, Duas and basic
-                Islamic studies in a simple and student-friendly way.
-            </p>
-
-            <a href="#" class="teacher-link">
-
-                <i class="fa-solid fa-user"></i>
-
-                LEARN MORE ABOUT ME
-
-            </a>
-
+          <div class="small-title">ABOUT YOUR TEACHER</div>
+          <h2>IMRAN ASHRAF</h2>
+          <p>
+            I am an Online Quran Teacher dedicated to helping students learn the Holy
+            Quran with proper Tajweed and Islamic manners. I teach Quran Reading,
+            Tajweed, Noorani Qaida, Salah, Duas and basic Islamic studies in a simple
+            and student-friendly way.
+          </p>
+          <a href="#contact" class="teacher-link">
+            <i class="fa-solid fa-user"></i>
+            LEARN MORE ABOUT ME
+          </a>
         </div>
+      </div>
 
-    </div>
-
-
-    <!-- WORLD -->
-
-    <div class="world-section">
-
-        <h2>
-            LEARN QURAN FROM ANYWHERE
-        </h2>
-
+      <div class="world-section">
+        <h2>LEARN QURAN FROM ANYWHERE</h2>
         <p>
-            Whether you are in the UK, USA, Canada, Australia,
-            Europe or anywhere else in the world, you can learn
-            the Quran online from the comfort of your home.
+          Whether you are in the UK, USA, Canada, Australia, Europe or anywhere else
+          in the world, you can learn the Quran online from the comfort of your home.
         </p>
 
-        <div class="flags">
-            🇬🇧 🇺🇸 🇨🇦 🇦🇺 🌐
+        <div class="flags" aria-label="Worldwide">
+          🇬🇧 🇺🇸 🇨🇦 🇦🇺 🌐
         </div>
 
         <a href="#contact" class="world-btn">
-
-            <i class="fa-regular fa-calendar-check"></i>
-
-            &nbsp; BOOK YOUR FREE TRIAL CLASS
-
+          <i class="fa-regular fa-calendar-check"></i>
+          &nbsp; BOOK YOUR FREE TRIAL CLASS
         </a>
+      </div>
+    </section>
 
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     STATS
-===================================================== -->
-
-<section class="stats">
-
-    <div class="container stats-grid">
-
-
+    <!-- STATS -->
+    <section class="stats" aria-label="Academy statistics">
+      <div class="container stats-grid">
         <div class="stat">
-
-            <div class="stat-icon">
-                <i class="fa-regular fa-face-smile"></i>
-            </div>
-
-            <div>
-
-                <div class="stat-number">
-                    500+
-                </div>
-
-                <div class="stat-label">
-                    Happy Students
-                </div>
-
-            </div>
-
+          <div class="stat-icon"><i class="fa-regular fa-face-smile"></i></div>
+          <div><div class="stat-number">500+</div><div class="stat-label">Happy Students</div></div>
         </div>
 
-
         <div class="stat">
-
-            <div class="stat-icon">
-                <i class="fa-solid fa-book-open"></i>
-            </div>
-
-            <div>
-
-                <div class="stat-number">
-                    1000+
-                </div>
-
-                <div class="stat-label">
-                    Classes Completed
-                </div>
-
-            </div>
-
+          <div class="stat-icon"><i class="fa-solid fa-book-open"></i></div>
+          <div><div class="stat-number">1000+</div><div class="stat-label">Classes Completed</div></div>
         </div>
 
-
         <div class="stat">
-
-            <div class="stat-icon">
-                <i class="fa-solid fa-globe"></i>
-            </div>
-
-            <div>
-
-                <div class="stat-number">
-                    20+
-                </div>
-
-                <div class="stat-label">
-                    Countries
-                </div>
-
-            </div>
-
+          <div class="stat-icon"><i class="fa-solid fa-globe"></i></div>
+          <div><div class="stat-number">20+</div><div class="stat-label">Countries</div></div>
         </div>
 
-
         <div class="stat">
-
-            <div class="stat-icon">
-                <i class="fa-solid fa-user-tie"></i>
-            </div>
-
-            <div>
-
-                <div class="stat-number">
-                    5+
-                </div>
-
-                <div class="stat-label">
-                    Years Experience
-                </div>
-
-            </div>
-
+          <div class="stat-icon"><i class="fa-solid fa-user-tie"></i></div>
+          <div><div class="stat-number">5+</div><div class="stat-label">Years Experience</div></div>
         </div>
+      </div>
+    </section>
 
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     TESTIMONIALS
-===================================================== -->
-
-<section class="section" id="testimonials">
-
-    <div class="container">
-
-
+    <!-- TESTIMONIALS -->
+    <section class="section" id="testimonials">
+      <div class="container">
         <div class="section-heading">
-
-            <div class="eyebrow">
-                Student Feedback
-            </div>
-
-            <h2>
-                What Our Students Say
-            </h2>
-
-            <div class="heading-line">
-
-                <span></span>
-
-                <i class="fa-solid fa-star"></i>
-
-                <span></span>
-
-            </div>
-
-            <p>
-                We are committed to providing quality Quranic
-                education with care, patience and dedication.
-            </p>
-
+          <div class="eyebrow">Student Feedback</div>
+          <h2>What Our Students Say</h2>
+          <div class="heading-line">
+            <span></span>
+            <i class="fa-solid fa-star"></i>
+            <span></span>
+          </div>
+          <p>We are committed to providing quality Quranic education with care, patience and dedication.</p>
         </div>
 
-
-        <div class="testimonial-box">
-
-            <div class="testimonial-stars">
-                ★★★★★
-            </div>
-
+        <div class="testimonial-wrap">
+          <article class="testimonial-box">
+            <div class="testimonial-stars">★★★★★</div>
             <p class="testimonial-text">
-                "A simple, comfortable and effective way to learn
-                Quran online. The teaching method is friendly and
-                easy to understand."
+              "A simple, comfortable and effective way to learn Quran online. The teaching method is friendly and easy to understand."
             </p>
+            <strong class="testimonial-name">— Student / Parent</strong>
+          </article>
 
-            <strong class="testimonial-name">
-                — Student / Parent
-            </strong>
+          <article class="testimonial-box">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              "The online learning environment makes it easy to continue Quran education from home with flexible timings."
+            </p>
+            <strong class="testimonial-name">— Student / Parent</strong>
+          </article>
 
+          <article class="testimonial-box">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              "The lessons focus on correct Quran reading, Tajweed and Islamic manners in a clear and student-friendly way."
+            </p>
+            <strong class="testimonial-name">— Student / Parent</strong>
+          </article>
         </div>
+      </div>
+    </section>
 
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer class="footer" id="contact">
-
-    <div class="container footer-main">
-
-
-        <!-- FOOTER IMAGE -->
-
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container cta-inner">
         <div>
-
-            <div class="footer-quran"></div>
-
+          <h2>Start Your Quran Learning Journey</h2>
+          <p>Book your free trial class and begin learning from the comfort of your home.</p>
         </div>
 
+        <div class="cta-actions">
+          <a href="#contact" class="btn btn-gold">
+            <i class="fa-regular fa-calendar-check"></i>
+            BOOK FREE TRIAL
+          </a>
+          <a href="https://wa.me/923498982892" target="_blank" rel="noopener" class="btn btn-outline">
+            <i class="fa-brands fa-whatsapp"></i>
+            WHATSAPP
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-        <!-- CONTACT -->
+  <!-- FOOTER -->
+  <footer class="footer" id="contact">
+    <div class="container footer-main">
+      <div class="footer-brand">
+        <h2>Imran Ashraf</h2>
+        <p>
+          Online Quran education with Tajweed and Islamic Education for kids and adults,
+          delivered with care, patience and dedication.
+        </p>
 
-        <div class="footer-column">
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://wa.me/923498982892" aria-label="WhatsApp" target="_blank" rel="noopener">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
 
-            <h3>
-                CONTACT US
-            </h3>
+      <div class="footer-column">
+        <h3>CONTACT US</h3>
 
-
-            <div class="contact-item">
-
-                <i class="fa-brands fa-whatsapp"></i>
-
-                <a href="https://wa.me/923498982892">
-
-                    0349 8982892
-
-                </a>
-
-            </div>
-
-
-            <div class="contact-item">
-
-                <i class="fa-solid fa-envelope"></i>
-
-                <a href="mailto:info@imranashrafacademy.com">
-
-                    info@imranashrafacademy.com
-
-                </a>
-
-            </div>
-
-
-            <div class="contact-item">
-
-                <i class="fa-solid fa-location-dot"></i>
-
-                <span>
-                    Online Classes Worldwide
-                </span>
-
-            </div>
-
+        <div class="contact-item">
+          <i class="fa-brands fa-whatsapp"></i>
+          <a href="https://wa.me/923498982892" target="_blank" rel="noopener">0349 8982892</a>
         </div>
 
-
-        <!-- SOCIAL -->
-
-        <div class="footer-column">
-
-            <h3>
-                STAY CONNECTED
-            </h3>
-
-            <p class="footer-description">
-
-                Follow us on social media for Quranic
-                learning updates and Islamic reminders.
-
-            </p>
-
-
-            <div class="footer-social">
-
-                <a href="#" aria-label="Facebook">
-
-                    <i class="fa-brands fa-facebook-f"></i>
-
-                </a>
-
-
-                <a href="#" aria-label="Instagram">
-
-                    <i class="fa-brands fa-instagram"></i>
-
-                </a>
-
-
-                <a href="#" aria-label="YouTube">
-
-                    <i class="fa-brands fa-youtube"></i>
-
-                </a>
-
-
-                <a
-                    href="https://wa.me/923498982892"
-                    aria-label="WhatsApp"
-                >
-
-                    <i class="fa-brands fa-whatsapp"></i>
-
-                </a>
-
-            </div>
-
+        <div class="contact-item">
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:info@imranashrafacademy.com">info@imranashrafacademy.com</a>
         </div>
 
+        <div class="contact-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Online Classes Worldwide</span>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h3>QUICK LINKS</h3>
+
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#about">About Us</a>
+          <a href="#courses">Courses</a>
+          <a href="#why">Why Choose Us</a>
+          <a href="#teacher">Our Teacher</a>
+          <a href="#testimonials">Testimonials</a>
+        </div>
+      </div>
     </div>
-
 
     <div class="copyright">
-
-        © 2026 Imran Ashraf Online Quran Academy.
-        All Rights Reserved.
-
+      © <span id="year">2026</span> Imran Ashraf Online Quran Academy. All Rights Reserved.
     </div>
+  </footer>
 
-</footer>
-
-
-<!-- =====================================================
-     FLOATING WHATSAPP
-===================================================== -->
-
-<a
+  <!-- FLOATING WHATSAPP -->
+  <a
     href="https://wa.me/923498982892"
     class="whatsapp"
     target="_blank"
+    rel="noopener"
     aria-label="Contact on WhatsApp"
->
-
+  >
     <i class="fa-brands fa-whatsapp"></i>
+  </a>
 
-</a>
+  <!-- BACK TO TOP -->
+  <button class="back-top" id="backTop" type="button" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
 
-
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
-
-<script>
-
-    /* ============================
-       MOBILE MENU
-    ============================ */
-
+  <script>
     const menuBtn = document.getElementById("menuBtn");
     const navLinks = document.getElementById("navLinks");
+    const navbar = document.getElementById("navbar");
+    const backTop = document.getElementById("backTop");
 
+    // Mobile menu
+    menuBtn.addEventListener("click", () => {
+      const open = navLinks.classList.toggle("show");
+      menuBtn.setAttribute("aria-expanded", String(open));
+      menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
 
-    menuBtn.addEventListener("click", function () {
+      const icon = menuBtn.querySelector("i");
+      icon.classList.toggle("fa-bars", !open);
+      icon.classList.toggle("fa-xmark", open);
 
-        navLinks.classList.toggle("show");
-
-        const icon = menuBtn.querySelector("i");
-
-        if (navLinks.classList.contains("show")) {
-
-            icon.classList.remove("fa-bars");
-            icon.classList.add("fa-xmark");
-
-        } else {
-
-            icon.classList.remove("fa-xmark");
-            icon.classList.add("fa-bars");
-
-        }
-
+      document.body.classList.toggle("menu-open", open);
     });
 
-
-    /* ============================
-       CLOSE MENU AFTER CLICK
-    ============================ */
-
+    // Close menu after navigation
     document.querySelectorAll(".nav-links a").forEach(link => {
-
-        link.addEventListener("click", function () {
-
-            navLinks.classList.remove("show");
-
-            const icon = menuBtn.querySelector("i");
-
-            icon.classList.remove("fa-xmark");
-            icon.classList.add("fa-bars");
-
-        });
-
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("show");
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.setAttribute("aria-label", "Open menu");
+        menuBtn.querySelector("i").classList.add("fa-bars");
+        menuBtn.querySelector("i").classList.remove("fa-xmark");
+        document.body.classList.remove("menu-open");
+      });
     });
 
+    // Navbar shadow + back-to-top
+    window.addEventListener("scroll", () => {
+      navbar.classList.toggle("scrolled", window.scrollY > 10);
+      backTop.classList.toggle("show", window.scrollY > 500);
 
-    /* ============================
-       ACTIVE NAVIGATION
-    ============================ */
+      const sections = document.querySelectorAll("main section[id]");
+      const links = document.querySelectorAll(".nav-links a:not(.nav-cta)");
+      let current = "home";
 
-    const sections = document.querySelectorAll("section[id]");
-    const links = document.querySelectorAll(".nav-links a");
+      sections.forEach(section => {
+        const top = section.offsetTop - 160;
+        if (window.scrollY >= top) current = section.id;
+      });
 
+      links.forEach(link => {
+        link.classList.toggle("active", link.getAttribute("href") === "#" + current);
+      });
+    }, { passive: true });
 
-    window.addEventListener("scroll", function () {
-
-        let current = "";
-
-        sections.forEach(section => {
-
-            const sectionTop = section.offsetTop - 150;
-            const sectionHeight = section.offsetHeight;
-
-            if (
-                window.scrollY >= sectionTop &&
-                window.scrollY < sectionTop + sectionHeight
-            ) {
-
-                current = section.getAttribute("id");
-
-            }
-
-        });
-
-
-        links.forEach(link => {
-
-            link.classList.remove("active");
-
-            if (
-                link.getAttribute("href") === "#" + current
-            ) {
-
-                link.classList.add("active");
-
-            }
-
-        });
-
+    // Back to top
+    backTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-</script>
-
-
+    // Dynamic year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
