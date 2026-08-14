@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Imran Ashraf Online Quran Academy</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --green: #004d39;
+            --dark-green: #003d2d;
+            --gold: #d4a52c;
+            --light-gold: #e7c15b;
+            --cream: #faf9f2;
+            --text: #16352b;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            color: var(--text);
+            background: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ================= TOP BAR ================= */
+
+        .topbar {
+            height: 38px;
+            background: #003d2d;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5.3%;
+            font-size: 12px;
+        }
+
+        .top-left,
+        .top-right {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .top-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .social-small {
+            display: flex;
+            gap: 9px;
+        }
+
+        .social-small span {
+            width: 17px;
+            height: 17px;
+            background: #fff;
+            color: #004d39;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 9px;
+            font-weight: 700;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            height: 85px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 6%;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,.04);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 58px;
+            height: 62px;
+            position: relative;
+        }
+
+        .logo-icon::before {
+            content: "☪";
+            position: absolute;
+            top: -7px;
+            left: 17px;
+            font-size: 25px;
+            color: var(--gold);
+        }
+
+        .book-logo {
+            width: 45px;
+            height: 42px;
+            border: 4px solid var(--green);
+            border-top: 0;
+            border-radius: 0 0 12px 12px;
+            position: absolute;
+            left: 5px;
+            top: 18px;
+            transform: skewY(-7deg);
+        }
+
+        .logo-text h2 {
+            color: var(--green);
+            font-family: Georgia, serif;
+            font-size: 23px;
+            line-height: 1;
+        }
+
+        .logo-text p {
+            color: var(--gold);
+            font-size: 13px;
+            letter-spacing: .5px;
+            margin-top: 5px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .nav-links a {
+            padding: 32px 0 27px;
+            position: relative;
+        }
+
+        .nav-links a:first-child {
+            color: var(--green);
+        }
+
+        .nav-links a:first-child::after {
+            content: "";
+            position: absolute;
+            bottom: 17px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--green);
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 405px;
+            background:
+                linear-gradient(90deg,
+                    rgba(0,63,45,.99) 0%,
+                    rgba(0,73,51,.96) 45%,
+                    rgba(0,63,45,.35) 65%,
+                    rgba(0,0,0,.18) 100%),
+                url("https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=1600&q=85")
+                center/cover no-repeat;
+            border-bottom: 5px solid var(--gold);
+            border-radius: 0 0 50% 5% / 0 0 5% 5%;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+            min-height: 405px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-text {
+            width: 52%;
+            color: #fff;
+            padding: 25px 0;
+        }
+
+        .welcome {
+            font-family: Georgia, serif;
+            font-style: italic;
+            font-size: 28px;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+
+        .hero h1 {
+            font-family: Georgia, serif;
+            font-size: 43px;
+            line-height: 1.05;
+            letter-spacing: 1px;
+            margin-bottom: 2px;
+        }
+
+        .academy-title {
+            color: var(--gold);
+            font-family: Georgia, serif;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .gold-line {
+            width: 390px;
+            height: 1px;
+            background: rgba(255,255,255,.65);
+            margin: 14px 0 17px;
+            position: relative;
+        }
+
+        .gold-line::after {
+            content: "";
+            width: 9px;
+            height: 9px;
+            background: var(--gold);
+            border-radius: 50%;
+            position: absolute;
+            left: 49%;
+            top: -4px;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            line-height: 1.4;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .hero-description {
+            font-size: 14px;
+            line-height: 1.6;
+            max-width: 430px;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 12px 18px;
+            border-radius: 7px;
+            border: 1px solid #fff;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-gold {
+            background: var(--gold);
+            border-color: var(--gold);
+        }
+
+        /* ================= SECTION ================= */
+
+        .section {
+            padding: 25px 5%;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            margin-bottom: 20px;
+            color: var(--green);
+            font-family: Georgia, serif;
+            font-size: 26px;
+            text-align: center;
+        }
+
+        .section-title::before,
+        .section-title::after {
+            content: "";
+            width: 75px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .section-title span {
+            color: var(--gold);
+            font-size: 13px;
+        }
+
+        /* ================= COURSES ================= */
+
+        .courses {
+            background: #fff;
+        }
+
+        .course-grid {
+            max-width: 1120px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 13px;
+        }
+
+        .course-card {
+            min-height: 195px;
+            padding: 18px 12px 13px;
+            border: 1px solid #e4e8e4;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,.07);
+            text-align: center;
+            transition: .25s;
+            background: #fff;
+        }
+
+        .course-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 7px 18px rgba(0,0,0,.12);
+        }
+
+        .course-icon {
+            height: 57px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--green);
+            font-size: 43px;
+            margin-bottom: 8px;
+        }
+
+        .course-card h3 {
+            font-size: 15px;
+            color: var(--green);
+            line-height: 1.35;
+            min-height: 40px;
+            margin-bottom: 7px;
+        }
+
+        .course-card p {
+            font-size: 11px;
+            line-height: 1.55;
+            color: #333;
+        }
+
+        /* ================= WHY ================= */
+
+        .why {
+            background: #f8f8f2;
+            padding-bottom: 22px;
+        }
+
+        .why-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+        }
+
+        .why-item {
+            text-align: center;
+            min-height: 90px;
+            border-right: 1px solid #d6d6d0;
+            padding: 2px 9px;
+        }
+
+        .why-item:last-child {
+            border-right: none;
+        }
+
+        .why-icon {
+            font-size: 34px;
+            color: var(--green);
+            margin-bottom: 7px;
+        }
+
+        .why-item h4 {
+            font-size: 12px;
+            line-height: 1.45;
+            color: #173f31;
+        }
+
+        /* ================= TEACHER ================= */
+
+        .teacher-area {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            min-height: 245px;
+        }
+
+        .teacher {
+            background: #004d39;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            padding: 20px 7%;
+            gap: 22px;
+        }
+
+        .teacher-photo {
+            width: 180px;
+            height: 180px;
+            flex-shrink: 0;
+            border: 4px solid var(--gold);
+            border-radius: 50%;
+            background:
+                url("https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?auto=format&fit=crop&w=500&q=80")
+                center/cover;
+        }
+
+        .teacher-info small {
+            color: var(--gold);
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .teacher-info h2 {
+            font-family: Georgia, serif;
+            font-size: 23px;
+            margin: 5px 0 10px;
+        }
+
+        .teacher-info p {
+            font-size: 11px;
+            line-height: 1.65;
+            max-width: 400px;
+        }
+
+        .teacher-btn {
+            display: inline-block;
+            background: var(--gold);
+            color: #fff;
+            padding: 9px 13px;
+            margin-top: 12px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .world {
+            padding: 23px 8%;
+            background: #fff;
+            text-align: center;
+            background-image:
+                radial-gradient(circle at center, rgba(0,77,57,.05), transparent 65%);
+        }
+
+        .world h2 {
+            color: var(--green);
+            font-family: Georgia, serif;
+            font-size: 19px;
+            margin-bottom: 12px;
+        }
+
+        .world p {
+            font-size: 11px;
+            line-height: 1.6;
+            max-width: 450px;
+            margin: auto;
+        }
+
+        .flags {
+            display: flex;
+            justify-content: center;
+            gap: 17px;
+            margin: 13px 0;
+            font-size: 29px;
+        }
+
+        .world-btn {
+            display: inline-block;
+            background: var(--green);
+            color: #fff;
+            padding: 10px 19px;
+            border-radius: 5px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        /* ================= STATS ================= */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            max-width: 1100px;
+            margin: auto;
+            padding: 17px 0;
+        }
+
+        .stat {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 13px;
+            border-right: 1px solid #ddd;
+        }
+
+        .stat:last-child {
+            border: none;
+        }
+
+        .stat-icon {
+            color: var(--green);
+            font-size: 33px;
+        }
+
+        .stat-number {
+            color: var(--gold);
+            font-size: 27px;
+            font-weight: 700;
+        }
+
+        .stat-text {
+            font-size: 11px;
+            color: #333;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #004d39;
+            color: #fff;
+        }
+
+        .footer-main {
+            min-height: 145px;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr 1fr;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+            padding: 12px 4%;
+        }
+
+        .footer-quran {
+            height: 130px;
+            width: 230px;
+            background:
+                linear-gradient(180deg, transparent, rgba(0,0,0,.15)),
+                url("https://images.unsplash.com/photo-1585036156171-384164a8c675?auto=format&fit=crop&w=600&q=80")
+                center/cover;
+            border: 4px solid var(--gold);
+            border-radius: 100px 100px 0 0;
+            margin-left: 10px;
+        }
+
+        .footer-column {
+            padding-left: 20px;
+            border-left: 1px solid rgba(255,255,255,.35);
+        }
+
+        .footer-column h3 {
+            color: var(--gold);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .contact-line {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin: 8px 0;
+            font-size: 11px;
+        }
+
+        .social-footer {
+            display: flex;
+            gap: 10px;
+            margin-top: 13px;
+        }
+
+        .social-footer a {
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            background: #fff;
+            color: var(--green);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,.4);
+            text-align: center;
+            padding: 8px;
+            font-size: 10px;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 900px) {
+
+            .navbar {
+                height: auto;
+                padding: 15px 5%;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .nav-links {
+                gap: 14px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-links a {
+                padding: 5px;
+            }
+
+            .nav-links a:first-child::after {
+                display: none;
+            }
+
+            .hero {
+                min-height: 500px;
+            }
+
+            .hero-content {
+                min-height: 500px;
+            }
+
+            .hero-text {
+                width: 70%;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .academy-title {
+                font-size: 22px;
+            }
+
+            .course-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .teacher-area {
+                grid-template-columns: 1fr;
+            }
+
+            .why-grid {
+                grid-template-columns: repeat(4, 1fr);
+                row-gap: 15px;
+            }
+
+            .why-item:nth-child(4) {
+                border-right: none;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .topbar {
+                height: auto;
+                padding: 8px 4%;
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            .hero {
+                min-height: 550px;
+                background:
+                    linear-gradient(90deg,
+                        rgba(0,63,45,.97),
+                        rgba(0,63,45,.82)),
+                    url("https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=900&q=80")
+                    center/cover;
+            }
+
+            .hero-content {
+                min-height: 550px;
+            }
+
+            .hero-text {
+                width: 100%;
+                text-align: center;
+            }
+
+            .gold-line {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .buttons {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .course-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-item:nth-child(2),
+            .why-item:nth-child(4),
+            .why-item:nth-child(6) {
+                border-right: none;
+            }
+
+            .teacher {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 6%;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .stat:nth-child(2) {
+                border: none;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-quran {
+                margin: auto;
+            }
+
+            .footer-column {
+                border-left: none;
+                padding-left: 0;
+            }
+
+            .social-footer {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+        <div class="top-left">
+            <div class="top-item">✉ info@imranashrafacademy.com</div>
+            <div class="top-item">◉ 0349 8982892</div>
+        </div>
+
+        <div class="top-right">
+            <span>Follow Us:</span>
+            <div class="social-small">
+                <span>f</span>
+                <span>◎</span>
+                <span>▶</span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+
+        <div class="logo">
+            <div class="logo-icon">
+                <div class="book-logo"></div>
+            </div>
+
+            <div class="logo-text">
+                <h2>IMRAN ASHRAF</h2>
+                <p>ONLINE QURAN ACADEMY</p>
+            </div>
+        </div>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#courses">Courses</a>
+            <a href="#why">Why Choose Us</a>
+            <a href="#teacher">Our Teacher</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact Us</a>
+        </div>
+
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="hero-text">
+
+                <div class="welcome">Welcome to</div>
+
+                <h1>IMRAN ASHRAF</h1>
+
+                <div class="academy-title">
+                    ONLINE QURAN ACADEMY
+                </div>
+
+                <div class="gold-line"></div>
+
+                <div class="hero-subtitle">
+                    Learn Quran Online with Tajweed<br>
+                    & Islamic Education
+                </div>
+
+                <p class="hero-description">
+                    Quality Quranic education for kids & adults
+                    from the comfort of your home.
+                </p>
+
+                <div class="buttons">
+                    <a href="#" class="btn">
+                        ▣ &nbsp; BOOK A FREE TRIAL CLASS
+                    </a>
+
+                    <a href="#" class="btn btn-gold">
+                        ◉ &nbsp; CONTACT US ON WHATSAPP
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- COURSES -->
+    <section class="section courses" id="courses">
+
+        <h2 class="section-title">
+            <span>✦</span>
+            OUR COURSES
+            <span>✦</span>
+        </h2>
+
+        <div class="course-grid">
+
+            <div class="course-card">
+                <div class="course-icon">📖</div>
+                <h3>Noorani Qaida</h3>
+                <p>
+                    Learn the basics of Quran reading with
+                    proper pronunciation.
+                </p>
+            </div>
+
+            <div class="course-card">
+                <div class="course-icon">📕</div>
+                <h3>Quran Reading<br>with Tajweed</h3>
+                <p>
+                    Read Quran with proper Tajweed rules
+                    and makharij.
+                </p>
+            </div>
+
+            <div class="course-card">
+                <div class="course-icon">📗</div>
+                <h3>Quran<br>Memorization</h3>
+                <p>
+                    Memorize Quran with easy and effective
+                    methods.
+                </p>
+            </div>
+
+            <div class="course-card">
+                <div class="course-icon">🕌</div>
+                <h3>Islamic Studies</h3>
+                <p>
+                    Basic Islamic education, Duas and
+                    Islamic manners.
+                </p>
+            </div>
+
+            <div class="course-card">
+                <div class="course-icon">🤲</div>
+                <h3>Salaic & Duas</h3>
+                <p>
+                    Learn Salah step by step and daily
+                    Duas.
+                </p>
+            </div>
+
+            <div class="course-card">
+                <div class="course-icon">👦</div>
+                <h3>Islamic Manners<br>for Kids</h3>
+                <p>
+                    Good manners and character building
+                    for kids.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- WHY CHOOSE US -->
+    <section class="section why" id="why">
+
+        <h2 class="section-title">
+            <span>✦</span>
+            WHY CHOOSE US?
+            <span>✦</span>
+        </h2>
+
+        <div class="why-grid">
+
+            <div class="why-item">
+                <div class="why-icon">🖥</div>
+                <h4>One-to-One<br>Online Classes</h4>
+            </div>
+
+            <div class="why-item">
+                <div class="why-icon">🎓</div>
+                <h4>Qualified &<br>Experienced<br>Teacher</h4>
+            </div>
+
+            <div class="why-item">
+                <div class="why-icon">📖</div>
+                <h4>Quran with<br>Proper Tajweed</h4>
+            </div>
+
+            <div class="why-item">
+                <div class="why-icon">🗓</div>
+                <h4>Flexible<br>Timings</h4>
+            </div>
+
+            <div class="why-item">
+                <div class="why-icon">👨‍👩‍👧</div>
+                <h4>Classes for<br>Kids & Adults</h4>
+            </div>
+
+            <div class="why-item">
+                <div class="why-icon">🌐</div>
+                <h4>Learn from<br>Anywhere in<br>the World</h4>
+            </div>
+
+            <div class="why-item">
+                <div class="why-icon">🏅</div>
+                <h4>Free Trial<br>Class</h4>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TEACHER + WORLD -->
+    <section class="teacher-area">
+
+        <div class="teacher" id="teacher">
+
+            <div class="teacher-photo"></div>
+
+            <div class="teacher-info">
+
+                <small>ABOUT YOUR TEACHER</small>
+
+                <h2>IMRAN ASHRAF</h2>
+
+                <p>
+                    I am an Online Quran Teacher dedicated to helping
+                    students learn the Holy Quran with proper Tajweed
+                    and Islamic manners. I teach Quran Reading,
+                    Tajweed, Noorani Qaida, Salah, Duas and basic
+                    Islamic studies in a simple and student-friendly way.
+                </p>
+
+                <a href="#" class="teacher-btn">
+                    👤 &nbsp; LEARN MORE ABOUT ME
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="world">
+
+            <h2>LEARN QURAN FROM ANYWHERE</h2>
+
+            <p>
+                Whether you are in the UK, USA, Canada, Australia,
+                Europe or anywhere else in the world, you can learn
+                the Quran online from the comfort of your home.
+            </p>
+
+            <div class="flags">
+                🇬🇧 🇺🇸 🇨🇦 🇦🇺 🌐
+            </div>
+
+            <a href="#" class="world-btn">
+                ▣ &nbsp; BOOK YOUR FREE TRIAL CLASS
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- STATS -->
+    <section class="stats">
+
+        <div class="stat">
+            <div class="stat-icon">☺</div>
+            <div>
+                <div class="stat-number">500+</div>
+                <div class="stat-text">Happy Students</div>
+            </div>
+        </div>
+
+        <div class="stat">
+            <div class="stat-icon">📖</div>
+            <div>
+                <div class="stat-number">1000+</div>
+                <div class="stat-text">Classes Completed</div>
+            </div>
+        </div>
+
+        <div class="stat">
+            <div class="stat-icon">🌐</div>
+            <div>
+                <div class="stat-number">20+</div>
+                <div class="stat-text">Countries</div>
+            </div>
+        </div>
+
+        <div class="stat">
+            <div class="stat-icon">♙</div>
+            <div>
+                <div class="stat-number">5+</div>
+                <div class="stat-text">Years of Experience</div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer id="contact">
+
+        <div class="footer-main">
+
+            <div class="footer-quran"></div>
+
+            <div class="footer-column">
+
+                <h3>CONTACT US</h3>
+
+                <div class="contact-line">
+                    <span>◉</span>
+                    <span>0349 8982892</span>
+                </div>
+
+                <div class="contact-line">
+                    <span>✉</span>
+                    <span>info@imranashrafacademy.com</span>
+                </div>
+
+                <div class="contact-line">
+                    <span>📍</span>
+                    <span>Online Classes Worldwide</span>
+                </div>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>STAY CONNECTED</h3>
+
+                <p style="font-size:11px;line-height:1.5;">
+                    Follow us on social media for updates
+                    and Islamic reminders.
+                </p>
+
+                <div class="social-footer">
+                    <a href="#">f</a>
+                    <a href="#">◎</a>
+                    <a href="#">▶</a>
+                    <a href="#">◉</a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2024 Imran Ashraf Online Quran Academy.
+            All Rights Reserved.
+        </div>
+
+    </footer>
+
+</body>
+</html>
